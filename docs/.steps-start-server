@@ -17,4 +17,9 @@ orchestrate env list
 - start the chat (only if you already have, at least, one agent)
 orchestrate chat start
 
+- OpenAPI definition is available by the link: http://localhost:4321/docs
+
+
+
+
 
