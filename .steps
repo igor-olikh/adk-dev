@@ -1,0 +1,20 @@
+
+- prepare the environment
+https://github.com/igor-olikh/adk-installation
+
+- create an .env file and set your parameters
+https://developer.watson-orchestrate.ibm.com/getting_started/wxOde_setup
+
+- run the following command
+orchestrate server start --env-file=.env
+
+- activate the local environment
+orchestrate env activate local
+
+- double check the local environment is active
+orchestrate env list
+
+- start the chat (only if you already have, at least, one agent)
+orchestrate chat start
+
+
