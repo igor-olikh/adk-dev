@@ -41,14 +41,13 @@ adk-dev/
 ├── mocks/
 │   ├── directory_service.py
 │   ├── hr_service.py
-│   └── __pycache__/
 ├── tests/
+│   ├── test_directory.py
+│   └── test_hr.py
 ├── tools/
 │   ├── create_profile_tool.yaml
 │   ├── get_directory_tool.yaml
 │   ├── schedule_meeting_tool.yaml
-│   ├── test_directory.py
-│   └── test_hr.py
 ├── HOWTO.md
 ├── poetry.lock
 ├── poetry.toml
