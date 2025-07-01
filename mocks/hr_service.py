@@ -23,7 +23,7 @@ meetings_db = {}
 @app.post("/employees", response_model=dict)
 def create_employee(emp: Employee):
     emp_id = str(uuid.uuid4())
-    db[emp_id] = emp.dict()
+    db[emp_id] = emp.model_dump()
     return {"employee_id": emp_id}
 
 @app.get("/employees/{emp_id}", response_model=Employee)
