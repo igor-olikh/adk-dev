@@ -19,46 +19,6 @@ A modular, end-to-end onboarding agent built with IBM watsonx Orchestrate AD
 
 ---
 
-## 📁 Repository Structure
-
-```text
-adk-dev/
-├── agents/
-│   ├── hr_specialist_agent.yaml
-│   └── onboarding_agent.yaml
-├── connections/
-│   ├── directory_api_connection.yaml
-│   └── hr_api_connection.yaml
-├── docs/
-│   ├── .steps-create-agent
-│   └── .steps-start-server
-├── evaluations/
-│   └── onboarding_tests.json
-├── flows/
-│   └── onboarding_flow.yaml
-├── knowledge-bases/
-│   └── onboarding_docs.yaml
-├── mocks/
-│   ├── directory_service.py
-│   ├── hr_service.py
-├── tests/
-│   ├── test_directory.py
-│   └── test_hr.py
-├── tools/
-│   ├── create_profile_tool.yaml
-│   ├── get_directory_tool.yaml
-│   ├── schedule_meeting_tool.yaml
-├── HOWTO.md
-├── poetry.lock
-├── poetry.toml
-├── pyproject.toml
-└── README.md
-```
-
-See full structure above for file details.
-
----
-
 ## 🧠 Learning Outcomes
 
 You'll learn how to:
