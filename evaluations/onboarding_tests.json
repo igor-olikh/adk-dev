@@ -1,0 +1,16 @@
+[
+  {
+    "query": "Please create a profile for Jane Doe and schedule her meeting.",
+    "expected": {
+      "action": "onboarding_flow",
+      "tools_invoked": ["create_profile_tool", "schedule_meeting_tool"]
+    }
+  },
+  {
+    "query": "What department is alice@example.com in?",
+    "expected": {
+      "action": "get_directory_tool",
+      "department": "HR"
+    }
+  }
+]
