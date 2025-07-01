@@ -3,5 +3,5 @@ kind: tool
 toolkit: python
 name: get_directory_tool
 connection: dir_api_conn
-entrypoint: get_directory_tool:get_info
-description: 'Fetches directory info'
+entrypoint: get_directory_tool:get_directory_info
+description: 'Fetches directory information for an employee by email address'
