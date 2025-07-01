@@ -1,12 +1,13 @@
 spec_version: v1
-environments:
-  local:
-    kind: connection
-    app_id: hr_api_conn
-    provider: api_key
-    description: HR system API key
-
 kind: connection
 app_id: hr_api_conn
 provider: api_key
 description: HR system API key
+environments:
+  draft:
+    kind: connection
+    app_id: hr_api_conn
+    security_scheme: api_key_auth
+    provider: api_key
+    description: HR system API key
+
