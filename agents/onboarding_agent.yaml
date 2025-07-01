@@ -1,0 +1,34 @@
+spec_version: v1
+kind: native
+name: onboarding_agent
+style: planner
+description: 'HR onboarding assistant'
+tools:
+  - create_profile_tool
+  - schedule_meeting_tool
+  - get_directory_tool
+knowledge_bases:
+  - onboarding_docs
+collaborators:
+  - hr_specialist_agent
+guidelines:
+  - display_name: 'Create Profile'
+    condition: 'query contains "create profile"'
+    action: 'invoke'
+    tool: create_profile_tool
+  - display_name: 'Schedule Meeting'
+    condition: 'query contains "schedule meeting"'
+    action: 'invoke'
+    tool: schedule_meeting_tool
+  - display_name: 'Fetch Directory'
+    condition: 'query contains "department"'
+    action: 'invoke'
+    tool: get_directory_tool
+starter_prompts:
+  is_default_prompts: false
+  prompts:
+    - id: prompt_onboard
+      title: 'Begin Onboarding'
+      subtitle: 'Start new hire setup'
+      prompt: 'Hello, I just joined. Please help me start the onboarding process.'
+      state: active
