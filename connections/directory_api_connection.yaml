@@ -1,5 +1,7 @@
 spec_version: v1
 kind: connection
 app_id: dir_api_conn
-provider: api_key
-description: Directory service API key
+environments:
+  draft:
+    kind: api_key
+    type: team
