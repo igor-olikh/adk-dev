@@ -21,17 +21,40 @@ A modular, end-to-end onboarding agent built with IBM watsonx Orchestrate AD
 
 ## 📁 Repository Structure
 
-hr-onboarding-agent/
+```text
+adk-dev/
 ├── agents/
-├── tools/
+│   ├── hr_specialist_agent.yaml
+│   └── onboarding_agent.yaml
 ├── connections/
-├── knowledge-bases/
-├── flows/
-├── mocks/
-├── tests/
+│   ├── directory_api_connection.yaml
+│   └── hr_api_connection.yaml
+├── docs/
+│   ├── .steps-create-agent
+│   └── .steps-start-server
 ├── evaluations/
+│   └── onboarding_tests.json
+├── flows/
+│   └── onboarding_flow.yaml
+├── knowledge-bases/
+│   └── onboarding_docs.yaml
+├── mocks/
+│   ├── directory_service.py
+│   ├── hr_service.py
+│   └── __pycache__/
+├── tests/
+├── tools/
+│   ├── create_profile_tool.yaml
+│   ├── get_directory_tool.yaml
+│   ├── schedule_meeting_tool.yaml
+│   ├── test_directory.py
+│   └── test_hr.py
 ├── HOWTO.md
+├── poetry.lock
+├── poetry.toml
+├── pyproject.toml
 └── README.md
+```
 
 See full structure above for file details.
 
@@ -39,7 +62,7 @@ See full structure above for file details.
 
 ## 🧠 Learning Outcomes
 
-You’ll learn how to:
+You'll learn how to:
 - Define and manage **connections**, **tools**, **KBs**, **flows**, **guidelines** and **starter prompts**
 - Integrate and test with **mock services**
 - Validate agent behavior with **pytest** and ADK evaluation
@@ -57,7 +80,7 @@ You’ll learn how to:
 
 ## 🛡️ Strategic Value
 
-This project demonstrates automation of repetitive and manual HR tasks. It showcases watsonx Orchestrate’s capabilities for enterprise-grade efficiency, compliance, and scalability in HR workflows.
+This project demonstrates automation of repetitive and manual HR tasks. It showcases watsonx Orchestrate's capabilities for enterprise-grade efficiency, compliance, and scalability in HR workflows.
 
 ---
 
