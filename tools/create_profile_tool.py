@@ -1,7 +1,7 @@
 import requests
 from ibm_watsonx_orchestrate.agent_builder.tools import tool, ToolPermission
 
-@tool(name="create_profile", description="Create a new profile", permission=ToolPermission.READ_WRITE)
+@tool(name="create_profile_tool", description="Create a new profile", permission=ToolPermission.READ_WRITE)
 def create_profile(name: str, email: str, title: str) -> str:
 
     name = name or "Unknown"
