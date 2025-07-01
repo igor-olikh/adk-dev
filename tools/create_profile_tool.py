@@ -16,7 +16,7 @@ def create_profile(name: str, email: str, title: str) -> str:
 
     # Call the mock HR system running on port 8001
     url = "http://localhost:8001/employees"
-    headers = {"Authorization": f"Bearer {"TBD"}"}
+    headers = {"Authorization": "Bearer TBD"}
 
     response = requests.post(url, json=payload, headers=headers, timeout=5)
 

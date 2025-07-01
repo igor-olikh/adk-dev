@@ -1,4 +1,5 @@
-import requests
+import uuid
+from datetime import datetime
 from ibm_watsonx_orchestrate.agent_builder.tools import tool, ToolPermission
 
 @tool(name="schedule_meeting_tool", description="Schedule a meeting with specified participants", permission=ToolPermission.READ_WRITE)
@@ -19,25 +20,15 @@ def schedule_meeting(subject: str, participants: list, start_time: str, duration
     if not subject or not participants or not start_time:
         return "Missing required parameters: subject, participants, and start_time are required"
     
-    payload = {
-        "subject": subject,
-        "participants": participants,
-        "start_time": start_time,
-        "duration_minutes": duration_minutes
-    }
+    # Mock meeting scheduling - generate a unique meeting ID
+    meeting_id = str(uuid.uuid4())
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Call the mock HR system running on port 8001
-    url = "http://localhost:8001/meetings"
-    headers = {"Authorization": f"Bearer {"TBD"}"}
+    # Validate participants list
+    if not isinstance(participants, list) or len(participants) == 0:
+        return "Error: participants must be a non-empty list of email addresses"
     
-    try:
-        response = requests.post(url, json=payload, headers=headers, timeout=5)
-        
-        if response.status_code == 201:
-            meeting_data = response.json()
-            return f"Successfully scheduled meeting '{subject}' with ID {meeting_data.get('meeting_id')} for {start_time}"
-        else:
-            return f"Failed to schedule meeting. Status code: {response.status_code}, Response: {response.text}"
-            
-    except requests.exceptions.RequestException as e:
-        return f"Error scheduling meeting: {str(e)}" 
+    # Mock successful meeting creation
+    participant_list = ", ".join(participants)
+    
+    return f"✅ Successfully scheduled meeting '{subject}' with ID {meeting_id[:8]}... for {start_time} (duration: {duration_minutes} minutes). Participants: {participant_list}. Created at: {current_time}" 

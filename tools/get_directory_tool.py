@@ -18,7 +18,7 @@ def get_directory_info(email: str) -> str:
     
     # Call the mock Directory service running on port 8002
     url = f"http://localhost:8002/directory/{email}"
-    headers = {"Authorization": f"Bearer {"TBD"}"}
+    headers = {"Authorization": "Bearer TBD"}
     
     try:
         response = requests.get(url, headers=headers, timeout=5)
