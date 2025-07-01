@@ -3,7 +3,7 @@
 ## 1. Prerequisites
 
 - Python 3.11–3.13  
-- Docker (Rancher or Colima), and at least 16 GB RAM, 8 CPU cores, 25 GB disk  
+- Docker (Rancher or Colima), and at least 16GB RAM, 8 CPU cores, 25GB disk  
 - Access to the `ibm-watsonx-orchestrate` Python package  
 
 ## 2. Clone & Install
@@ -19,7 +19,7 @@ pip install --upgrade ibm-watsonx-orchestrate fastapi uvicorn pytest
 ## 3. Launch Watsonx Orchestrate Developer Edition
 
 ```bash
-orchestrate server start
+orchestrate server start --env-file=.env
 orchestrate env activate local
 ```
 
