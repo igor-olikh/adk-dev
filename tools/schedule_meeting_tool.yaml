@@ -1,6 +1,7 @@
 spec_version: v1
 kind: tool
-toolkit: openapi
+toolkit: python
 name: schedule_meeting_tool
 connection: hr_api_conn
-openapi_url: http://localhost:8000/docs/swagger.json  # point to mock
+entrypoint: schedule_meeting_tool:schedule_meeting
+description: 'Schedules meetings with specified participants in the HR system'
