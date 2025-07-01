@@ -1,1 +1,2 @@
-TBD
+With the ADK, you can create native agents, external agents, and external watsonx Assistants agents.
+Each of these agent types requires its own set of configurations.
