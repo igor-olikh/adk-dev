@@ -3,4 +3,4 @@ kind: knowledge_base
 name: onboarding_docs
 description: 'Onboarding policy documents'
 documents:
-  - "knowledge-bases/docs/onboarding_policy.pdf"
+  - "docs/onboarding_policy.pdf"
