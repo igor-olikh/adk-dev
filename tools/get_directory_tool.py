@@ -25,9 +25,15 @@ def get_directory_info(email: str) -> str:
         
         if response.status_code == 200:
             data = response.json()
-            return f"Found directory entry for {email}: Department: {data.get('department', 'N/A')}, Manager: {data.get('manager', 'N/A')}"
+            return f"✅ Found directory entry for {email}: Department: {data.get('department', 'N/A')}, Manager: {data.get('manager', 'N/A')}"
+        elif response.status_code == 404:
+            return f"❌ No directory entry found for email: {email}"
         else:
-            return f"Directory lookup failed. Status: {response.status_code}, Response: {response.text}"
+            return f"❌ Directory lookup failed. Status: {response.status_code}, Response: {response.text}"
             
+    except requests.exceptions.ConnectionError:
+        return "❌ Error: Could not connect to Directory service. Please ensure the mock Directory service is running on port 8002."
+    except requests.exceptions.Timeout:
+        return "❌ Error: Request to Directory service timed out."
     except requests.exceptions.RequestException as e:
-        return f"Error looking up directory info: {str(e)}"
+        return f"❌ Error looking up directory info: {str(e)}"

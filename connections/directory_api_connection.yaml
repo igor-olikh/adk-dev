@@ -5,3 +5,4 @@ environments:
   draft:
     kind: api_key
     type: team
+    server_url: http://localhost:8002/

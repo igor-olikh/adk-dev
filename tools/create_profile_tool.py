@@ -18,9 +18,18 @@ def create_profile(name: str, email: str, title: str) -> str:
     url = "http://localhost:8001/employees"
     headers = {"Authorization": "Bearer TBD"}
 
-    response = requests.post(url, json=payload, headers=headers, timeout=5)
-
-    if response.status_code != 200:
-        return f"Failed to create profile. Status code: {response.status_code}, Response: {response.text}"
-
-    return f"Created new employee profile with email {email}"
+    try:
+        response = requests.post(url, json=payload, headers=headers, timeout=5)
+        
+        if response.status_code == 200:
+            data = response.json()
+            return f"✅ Successfully created new employee profile for {name} ({email}) with title '{title}'. Employee ID: {data.get('employee_id', 'N/A')}"
+        else:
+            return f"❌ Failed to create profile. Status code: {response.status_code}, Response: {response.text}"
+            
+    except requests.exceptions.ConnectionError:
+        return "❌ Error: Could not connect to HR service. Please ensure the mock HR service is running on port 8001."
+    except requests.exceptions.Timeout:
+        return "❌ Error: Request to HR service timed out."
+    except requests.exceptions.RequestException as e:
+        return f"❌ Error creating profile: {str(e)}"
