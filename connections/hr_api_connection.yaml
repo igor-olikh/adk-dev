@@ -6,4 +6,8 @@ environments:
     kind: api_key
     type: team
     server_url: http://localhost:8001/
+  live:
+    kind: api_key
+    type: team
+    server_url: http://localhost:8001/
 
