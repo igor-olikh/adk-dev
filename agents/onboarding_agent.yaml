@@ -1,8 +1,10 @@
 spec_version: v1
 kind: native
 name: onboarding_agent
-style: planner
-description: 'HR onboarding assistant'
+llm: watsonx/ibm/granite-3-8b-instruct
+style: default
+description: >
+  'HR onboarding assistant'
 tools:
   - create_profile_tool
   - schedule_meeting_tool
