@@ -55,3 +55,15 @@ else
     echo "Please provide the ServiceNow password when prompted"
     orchestrate connections set-credentials -a service-now --env live -u admin
 fi
+
+# Import the get_my_claims tool
+echo "Importing get_my_claims tool..."
+orchestrate tools import -k python -f ./tools/get_my_claims.py
+
+# Import the get_healthcare_benefits tool
+echo "Importing get_healthcare_benefits tool..."
+orchestrate tools import -k python -f ./tools/get_healthcare_benefits.py
+
+# Import the search_healthcare_providers tool
+echo "Importing search_healthcare_providers tool..."
+orchestrate tools import -k python -f ./tools/search_healthcare_providers.py
