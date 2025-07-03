@@ -67,3 +67,23 @@ orchestrate tools import -k python -f ./tools/get_healthcare_benefits.py
 # Import the search_healthcare_providers tool
 echo "Importing search_healthcare_providers tool..."
 orchestrate tools import -k python -f ./tools/search_healthcare_providers.py
+
+# Import the create_service_now_incident tool
+echo "Importing create_service_now_incident tool..."
+orchestrate tools import -k python -f ./tools/create_service_now_incident.py -a service-now
+
+# Import the get_my_service_now_incidents tool
+echo "Importing get_my_service_now_incidents tool..."
+orchestrate tools import -k python -f ./tools/get_my_service_now_incidents.py -a service-now
+
+# Import the get_service_now_incident_by_number tool
+echo "Importing get_service_now_incident_by_number tool..."
+orchestrate tools import -k python -f ./tools/get_service_now_incident_by_number.py -a service-now
+
+# Import the service_now_agent
+echo "Importing service_now_agent..."
+orchestrate agents import -f ./agents/service_now_agent.yaml
+
+# Import the customer_care_agent
+echo "Importing customer_care_agent..."
+orchestrate agents import -f ./agents/customer_care_agent.yaml
