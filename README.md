@@ -35,6 +35,45 @@ You'll learn how to:
 2. Adjust mocks or tools to fit your environment—swap in real APIs without changing agent logic.
 3. Extend agents with new features or integrate with real-world systems via additional connections/tools.
 
+## 🔧 ServiceNow Integration Setup
+
+The `run-service-now.sh` script provides automated setup for ServiceNow integration with watsonx Orchestrate. This script configures the complete ServiceNow environment including connections, tools, and agents.
+
+### Prerequisites
+
+Create a `.env` file in the project root with the following variables:
+```bash
+WO_API_KEY=your_orchestrate_api_key_here
+SERVICE_NOW_URL=your_servicenow_instance_url_here
+SERVICE_NOW_PASSWORD=your_servicenow_password_here
+```
+
+### What the Script Does
+
+The `run-service-now.sh` script performs the following automated setup:
+
+1. **Environment Activation**: Activates the wxo-cloud environment using the API key from `.env`
+2. **Connection Management**: 
+   - Removes existing service-now connection if present
+   - Adds new service-now connection
+   - Configures connection with ServiceNow URL and credentials
+3. **Tool Imports**:
+   - Healthcare tools: `get_my_claims.py`, `get_healthcare_benefits.py`, `search_healthcare_providers.py`
+   - ServiceNow tools: `create_service_now_incident.py`, `get_my_service_now_incidents.py`, `get_service_now_incident_by_number.py`
+4. **Agent Imports**: Imports `service_now_agent.yaml` and `customer_care_agent.yaml`
+
+### Usage
+
+```bash
+# Make the script executable
+chmod +x run-service-now.sh
+
+# Run the setup script
+./run-service-now.sh
+```
+
+The script provides clear feedback at each step and handles both automated and manual credential input scenarios.
+
 ---
 
 ## 🛡️ Strategic Value
